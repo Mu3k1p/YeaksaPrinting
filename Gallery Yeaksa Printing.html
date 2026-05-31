@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Gallery - Yeaksa Printing</title>
+
+<link rel="icon" type="image/png" href="Yeaksa_printing.ico"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-tint": "#0062a2",
+                "surface": "#fcf9f8",
+                "secondary-fixed": "#ffdad7",
+                "inverse-on-surface": "#f3f0ef",
+                "surface-dim": "#dcd9d9",
+                "primary": "#005994",
+                "on-primary-container": "#ecf3ff",
+                "on-secondary-fixed": "#410004",
+                "outline": "#717882",
+                "inverse-surface": "#313030",
+                "primary-container": "#0072bc",
+                "tertiary-fixed-dim": "#c9c6bf",
+                "on-secondary-fixed-variant": "#930014",
+                "on-surface-variant": "#404751",
+                "tertiary-container": "#6f6e68",
+                "on-primary-fixed-variant": "#00497c",
+                "on-tertiary-container": "#f5f2ea",
+                "background": "#fcf9f8",
+                "on-secondary": "#ffffff",
+                "error-container": "#ffdad6",
+                "surface-container": "#f0eded",
+                "primary-fixed": "#d1e4ff",
+                "surface-container-low": "#f6f3f2",
+                "outline-variant": "#c0c7d3",
+                "on-error": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "on-secondary-container": "#fffbff",
+                "secondary": "#bb001d",
+                "tertiary": "#575650",
+                "on-tertiary-fixed": "#1c1c17",
+                "on-error-container": "#93000a",
+                "surface-container-highest": "#e5e2e1",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#001d35",
+                "tertiary-fixed": "#e5e2da",
+                "surface-variant": "#e5e2e1",
+                "primary-fixed-dim": "#9dcaff",
+                "secondary-fixed-dim": "#ffb3ae",
+                "surface-container-high": "#eae7e7",
+                "on-primary": "#ffffff",
+                "surface-bright": "#fcf9f8",
+                "inverse-primary": "#9dcaff",
+                "error": "#ba1a1a",
+                "on-tertiary-fixed-variant": "#474741",
+                "secondary-container": "#e2222f",
+                "on-surface": "#1c1b1b",
+                "on-background": "#1c1b1b"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "margin-mobile": "16px",
+                "container-max-width": "1280px",
+                "gutter": "24px",
+                "margin-desktop": "64px",
+                "base": "8px"
+        },
+        "fontFamily": {
+                "label-sm": ["Hanken Grotesk"],
+                "headline-xl": ["Domine"],
+                "headline-lg-mobile": ["Domine"],
+                "label-md": ["Hanken Grotesk"],
+                "body-lg": ["Hanken Grotesk"],
+                "headline-lg": ["Domine"],
+                "headline-md": ["Domine"],
+                "body-md": ["Hanken Grotesk"]
+        },
+        "fontSize": {
+                "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+        },
+        "animation": {
+          'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+          'fade-in': 'fadeIn 1.2s ease-out forwards',
+          'float': 'float 6s ease-in-out infinite',
+          'shimmer': 'shimmer 2.5s infinite'
+        },
+        "keyframes": {
+          fadeInUp: {
+            '0%': { opacity: '0', transform: 'translateY(20px)' },
+            '100%': { opacity: '1', transform: 'translateY(0)' },
+          },
+          fadeIn: {
+            '0%': { opacity: '0' },
+            '100%': { opacity: '1' },
+          },
+          float: {
+            '0%, 100%': { transform: 'translateY(0)' },
+            '50%': { transform: 'translateY(-10px)' },
+          },
+          shimmer: {
+            '100%': { transform: 'translateX(100%)' }
+          }
+        }
+      },
+    },
+  }
+</script>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+    }
+    body {
+        background-color: #fcf9f8;
+        color: #1c1b1b;
+        overflow-x: hidden;
+    }
+
+    /* Staggered entrance for grid items */
+    .grid-item {
+        opacity: 0;
+    }
+    .grid-item.animate-entrance {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    /* Hover Overlay Shimmer */
+    .shimmer-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        transform: translateX(-100%);
+    }
+    .group:hover .shimmer-container::after {
+        animation: shimmer 1.2s ease-in-out;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        *, ::before, ::after {
+            animation-delay: -1ms !important;
+            animation-duration: 1ms !important;
+            animation-iteration-count: 1 !important;
+            background-attachment: initial !important;
+            scroll-behavior: auto !important;
+            transition-duration: 0s !important;
+            transition-delay: 0s !important;
+        }
+        .grid-item { opacity: 1 !important; transform: none !important; }
+    }
+</style>
+</head>
+<body class="font-body-md text-body-md relative">
+
+<!-- Top Navigation Bar -->
+<header class="w-full top-0 sticky z-40 bg-surface border-b border-surface-container">
+    <div class="max-w-[1280px] mx-auto px-margin-desktop flex items-center justify-between h-20">
+        <div class="flex items-center gap-8">
+            <a href="./index.html" class="flex items-center gap-2">
+                <img src="Yeaksa_printing.png" alt="Yeaksa Printing logo" class="h-20 w-auto" />
+            </a>
+        </div>
+        <div class="hidden md:flex items-center gap-10">
+            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./index.html">Home</a>
+            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./Locations Yeaksa Printing.html">Locations</a>
+            <a class="nav-link active font-body-md text-primary cursor-pointer" href="./About Yeaksa Printing.html">About</a>
+             <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="Gallery Yeaksa Printing.html">Gallery</a>
+            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="Contact Us.html">Contact Us</a>
+        </div>
+        <div class="flex items-center gap-6">
+            
+            <button class="md:hidden hamburger-btn" id="hamburger">
+                <span class="material-symbols-outlined text-primary">menu</span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Mobile Navigation Menu -->
+<nav class="mobile-menu fixed top-20 left-0 right-0 bg-surface border-b border-surface-container hidden z-40 p-4 shadow-lg md:hidden" id="mobileMenu">
+    <div class="flex flex-col gap-4">
+       <a href="./index.html" class="mobile-menu-link">Home</a>
+<a href="./Locations Yeaksa Printing.html" class="mobile-menu-link">Locations</a>
+<a href="./About Yeaksa Printing.html" class="mobile-menu-link">About</a>
+<a href="./Gallery Yeaksa Printing.html" class="mobile-menu-link">Gallery</a>
+<a href="./Contact Us.html" class="mobile-menu-link">Contact Us</a>
+    </div>
+</nav>
+
+<main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="max-w-[1280px] mx-auto px-margin-desktop py-16">
+        <div class="flex flex-col gap-4 border-b border-outline-variant pb-12 animate-fade-in">
+            <span class="font-label-md text-label-md text-primary tracking-widest flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                PREMIUM POLITICAL ATTIRE
+            </span>
+            <h1 class="font-headline-xl text-headline-xl text-on-surface opacity-0 animate-fade-in-up" style="animation-delay: 0.2s">The Statesman Gallery</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl opacity-0 animate-fade-in-up" style="animation-delay: 0.4s">
+                A showcase of commanding presence and Khmer heritage. Yeaksa Printing archives authoritative, high-end garments designed for leaders and national representatives. Scroll through each clothing item's inline slider below to view available print angles and patterns.
+            </p>
+            <p class="font-label-md text-label-md text-secondary uppercase tracking-widest mt-2 opacity-0 animate-fade-in-up" style="animation-delay: 0.6s">
+                Contact us for bespoke appointments and inquiries.
+            </p>
+        </div>
+    </section>
+
+    <!-- Product Explorer Grid (Formatted in 2x2 Block) -->
+    <section class="max-w-[1080px] mx-auto px-margin-desktop pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+            
+            <!-- Slot 1 (The Minister's Tunic) -->
+            <div class="group flex flex-col grid-item" style="animation-delay: 100ms">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative border border-outline-variant rounded-lg shadow-sm group">
+                    <!-- Inline Navigation Controls -->
+                    <button onclick="navigateCard(0, -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_left</span>
+                    </button>
+                    <button onclick="navigateCard(0, 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_right</span>
+                    </button>
+
+                    <!-- Image with Fade Transition -->
+                    <div class="w-full h-full relative">
+                        <img id="cardImg-0" alt="Formal Silk Jacket" class="w-full h-full object-cover transition-opacity duration-300" src="YeaksaTsp2/1.png"/>
+                    </div>
+
+                    <!-- Progress Indicator Dots -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/40 px-3 py-1.5 rounded-full z-10">
+                        <span id="cardDot-0-0" class="w-4 h-1.5 rounded-full bg-primary transition-all duration-300"></span>
+                        <span id="cardDot-0-1" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-0-2" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-0-3" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="font-headline-md text-headline-md text-on-surface transition-colors duration-300 group-hover:text-primary">White Jacketed Blazer</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">White jacket made for the cooler weathers.</p>
+                </div>
+            </div>
+
+            <!-- Slot 2 (The Diplomat's Hol Scarf) -->
+            <div class="group flex flex-col grid-item" style="animation-delay: 200ms">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative border border-outline-variant rounded-lg shadow-sm group">
+                    <!-- Inline Navigation Controls -->
+                    <button onclick="navigateCard(1, -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_left</span>
+                    </button>
+                    <button onclick="navigateCard(1, 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_right</span>
+                    </button>
+
+                    <!-- Image with Fade Transition -->
+                    <div class="w-full h-full relative">
+                        <img id="cardImg-1" alt="Silk Scarf Hol" class="w-full h-full object-cover transition-opacity duration-300" src="YeaksaTsp2/4.png"/>
+                    </div>
+
+                    <!-- Progress Indicator Dots -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/40 px-3 py-1.5 rounded-full z-10">
+                        <span id="cardDot-1-0" class="w-4 h-1.5 rounded-full bg-primary transition-all duration-300"></span>
+                        <span id="cardDot-1-1" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-1-2" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-1-3" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="font-headline-md text-headline-md text-on-surface transition-colors duration-300 group-hover:text-primary">Long Sleeves Polo Shirt</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Intricate weaving in white, featuring heritage patterns.</p>
+                </div>
+            </div>
+
+            <!-- Slot 3 (The Sovereign Sampot) -->
+            <div class="group flex flex-col grid-item" style="animation-delay: 300ms">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative border border-outline-variant rounded-lg shadow-sm group">
+                    <!-- Inline Navigation Controls -->
+                    <button onclick="navigateCard(2, -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_left</span>
+                    </button>
+                    <button onclick="navigateCard(2, 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_right</span>
+                    </button>
+
+                    <!-- Image with Fade Transition -->
+                    <div class="w-full h-full relative">
+                        <img id="cardImg-2" alt="Crimson Silk Sampot" class="w-full h-full object-cover transition-opacity duration-300" src="YeaksaTsp2/7.png" />
+                    </div>
+
+                    <!-- Progress Indicator Dots -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/40 px-3 py-1.5 rounded-full z-10">
+                        <span id="cardDot-2-0" class="w-4 h-1.5 rounded-full bg-primary transition-all duration-300"></span>
+                        <span id="cardDot-2-1" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-2-2" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-2-3" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="font-headline-md text-headline-md text-on-surface transition-colors duration-300 group-hover:text-primary">White Shorts sleeves Polo Shirt</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Comfortable wear for everyday usage.</p>
+                </div>
+            </div>
+
+            <!-- Slot 4 (The Ivory Peace Sash) -->
+            <div class="group flex flex-col grid-item" style="animation-delay: 100ms">
+                <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative border border-outline-variant rounded-lg shadow-sm group">
+                    <!-- Inline Navigation Controls -->
+                    <button onclick="navigateCard(3, -1)" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_left</span>
+                    </button>
+                    <button onclick="navigateCard(3, 1)" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 hover:bg-black/80 text-white flex items-center justify-center transition-all z-10 md:opacity-0 md:group-hover:opacity-100 shadow">
+                        <span class="material-symbols-outlined text-lg">chevron_right</span>
+                    </button>
+
+                    <!-- Image with Fade Transition -->
+                    <div class="w-full h-full relative">
+                        <img id="cardImg-3" alt="Blue T-Shirt" class="w-full h-full object-cover transition-opacity duration-300" src="YeaksaTsp2/13.png" />
+                    </div>
+
+                    <!-- Progress Indicator Dots -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 bg-black/40 px-3 py-1.5 rounded-full z-10">
+                        <span id="cardDot-3-0" class="w-4 h-1.5 rounded-full bg-primary transition-all duration-300"></span>
+                        <span id="cardDot-3-1" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-3-2" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                        <span id="cardDot-3-3" class="w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300"></span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <h2 class="font-headline-md text-headline-md text-on-surface transition-colors duration-300 group-hover:text-primary">Blue T-Shirt</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Comfortable blue t-shirt for everyday wear.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="w-full mt-auto bg-surface-container-highest border-t border-outline-variant">
+    <div class="max-w-[1280px] mx-auto px-margin-desktop py-12 flex flex-col md:flex-row justify-between items-center gap-base">
+        <div class="flex flex-col items-center md:items-start gap-4">
+            <div class="flex items-center gap-2">
+                <img src="Yeaksa_printing.png" width="50" height="50" alt="Yeaksa Printing Logo">
+            </div>
+            <p class="font-label-md text-label-md text-on-surface-variant text-center md:text-left"> Heritage & Modern Craft Since 2016.</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./About Yeaksa Printing.html">About</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./Locations Yeaksa Printing.html">Locations</a>
+            <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="mailto:protocol@yeaksaprinting.com">Contact</a>
+        </div>
+        <div class="text-center md:text-right">
+            <p class="font-label-md text-label-md text-on-surface-variant">© 2016 Yeaksa Printing. All rights reserved.</p>
+            <div class="flex justify-center md:justify-end gap-4 mt-2">
+                <span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">public</span>
+                <span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">mail</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // In-memory local slide database for the 4 primary clothing products
+    const clothingItems = [
+        {
+            images: [
+                "YeaksaTsp2/1.png",
+                "YeaksaTsp2/2.png",
+                "YeaksaTsp2/3.png",
+            ]
+        },
+        {
+            images: [
+                "YeaksaTsp2/5.png",
+                "YeaksaTsp2/6.png"
+            ]
+        },
+        {
+            images: [
+                "YeaksaTsp2/8.png",
+                "YeaksaTsp2/9.png"
+            ]
+        },
+        {
+            images: [
+                "YeaksaTsp2/11.png",
+                "YeaksaTsp2/12.png"
+            ]
+        }
+    ];
+
+    // Local slide tracking states
+    const activeSlideIndexes = [0, 0, 0, 0];
+
+    // Navigation trigger for individual catalog cards
+    function navigateCard(cardIndex, direction) {
+        const item = clothingItems[cardIndex];
+        let currentIndex = activeSlideIndexes[cardIndex];
+        
+        // Wrap around calculations
+        currentIndex = (currentIndex + direction + item.images.length) % item.images.length;
+        activeSlideIndexes[cardIndex] = currentIndex;
+
+        const imgEl = document.getElementById(`cardImg-${cardIndex}`);
+        
+        // Apply micro-animation transition
+        imgEl.classList.add('opacity-0');
+        setTimeout(() => {
+            imgEl.src = item.images[currentIndex];
+            imgEl.onload = () => {
+                imgEl.classList.remove('opacity-0');
+            };
+        }, 150);
+
+        // Update indicators
+        for (let i = 0; i < item.images.length; i++) {
+            const dot = document.getElementById(`cardDot-${cardIndex}-${i}`);
+            if (dot) {
+                if (i === currentIndex) {
+                    dot.className = "w-4 h-1.5 rounded-full bg-primary transition-all duration-300";
+                } else {
+                    dot.className = "w-1.5 h-1.5 rounded-full bg-white/40 transition-all duration-300";
+                }
+            }
+        }
+    }
+
+    // Intersection Observer for grid entrances
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-entrance');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.grid-item').forEach(item => {
+            observer.observe(item);
+        });
+    });
+
+    // Mobile Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+            mobileMenu.classList.add('hidden');
+        }
+    });
+</script>
+</body>
+</html>
