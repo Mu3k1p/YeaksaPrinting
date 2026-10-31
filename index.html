@@ -247,11 +247,11 @@
 </a>
 </div>
 <div class="hidden md:flex items-center gap-10">
-<a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./index.html">Home</a>
+<a class="nav-link active font-body-md text-primary cursor-pointer" href="./index.html">Home</a>
             <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./Locations Yeaksa Printing.html">Locations</a>
-            <a class="nav-link active font-body-md text-primary cursor-pointer" href="./About Yeaksa Printing.html">About</a>
-             <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="Gallery Yeaksa Printing.html">Gallery</a>
-            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="Contact Us.html">Contact Us</a>
+            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./About Yeaksa Printing.html">About</a>
+             <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./Gallery Yeaksa Printing.html">Gallery</a>
+            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./Contact Us.html">Contact Us</a>
 
 </div>
 <div class="flex items-center gap-6">
@@ -347,7 +347,7 @@
 <div class="absolute inset-0 flex flex-col justify-center items-center text-center p-8">
 <span class="font-label-md text-label-md text-primary uppercase mb-2">Read More</span>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">Discover our story and commitment to excellence.</p>
-<a class="mt-4 font-label-md text-label-md text-primary uppercase border-b border-primary" href="#">About Us</a>
+<a class="mt-4 font-label-md text-label-md text-primary uppercase border-b border-primary" href="./About Yeaksa Printing.html">About Us</a>
 </div>
 </div>
 <!-- Secondary Card 2 -->
@@ -373,15 +373,17 @@
 <p class="font-label-md text-label-md text-on-surface-variant text-center md:text-left"> Heritage &amp; Modern Craft Since 2016.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./index.html">Home</a>
                 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./About Yeaksa Printing.html">About</a>
                 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./Locations Yeaksa Printing.html">Locations</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="mailto:protocol@yeaksaprinting.com">Contact</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./Gallery Yeaksa Printing.html">Gallery</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./Contact Us.html">Contact Us</a>
 </div>
 <div class="text-center md:text-right">
 <p class="font-label-md text-label-md text-on-surface-variant">© 2016 Yeaksa Printing. All rights reserved.</p>
 <div class="flex justify-center md:justify-end gap-4 mt-2">
 <span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">public</span>
-<span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">mail</span>
+<a href="mailto:protocol@yeaksaprinting.com" aria-label="Email Yeaksa Printing"><span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">mail</span></a>
 </div>
 </div>
 </div>
@@ -391,7 +393,7 @@
   // Set active nav link based on current page
   document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPage = decodeURIComponent(window.location.pathname.split('/').pop()) || 'index.html';
     
     navLinks.forEach(link => {
       link.classList.remove('active');
@@ -413,7 +415,7 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    const currentPageFile = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPageFile = decodeURIComponent(window.location.pathname.split('/').pop()) || 'index.html';
 
     // Toggle mobile menu
     hamburger.addEventListener('click', (e) => {
