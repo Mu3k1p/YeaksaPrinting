@@ -221,10 +221,10 @@
 </div>
 <div class="hidden md:flex items-center gap-10">
 <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./index.html">Home</a>
-            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./Locations Yeaksa Printing.html">Locations</a>
-            <a class="nav-link active font-body-md text-primary cursor-pointer" href="./About Yeaksa Printing.html">About</a>
-             <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="Gallery Yeaksa Printing.html">Gallery</a>
-            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="Contact Us.html">Contact Us</a>
+            <a class="nav-link active font-body-md text-primary cursor-pointer" href="./Locations Yeaksa Printing.html">Locations</a>
+            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./About Yeaksa Printing.html">About</a>
+             <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./Gallery Yeaksa Printing.html">Gallery</a>
+            <a class="nav-link font-body-md text-body-md text-on-surface-variant cursor-pointer" href="./Contact Us.html">Contact Us</a>
 
 </div>
 <div class="flex items-center gap-6">
@@ -247,7 +247,7 @@
 <header class="mb-16 text-center max-w-3xl mx-auto">
 <p class="font-label-md text-label-md text-secondary mb-4 flex items-center justify-center gap-2">
 <span class="w-2 h-2 bg-secondary rounded-full"></span>
-                KHMER OWNED &amp; MODERN CRAFT — SINCE 2016
+                KHMER OWNED &amp; MODERN CRAFT, SINCE 2016
             </p>
 <h1 class="font-headline-xl text-headline-xl text-on-surface mb-6">Our Locations</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant">Welcome, esteemed representatives. Experience the pinnacle of Khmer tailoring printing at our official flagship showroom.</p>
@@ -264,7 +264,7 @@
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">Street 598, Khan Saensokh, Sangkat Phnom Penh Thmei,<br/>Phnom Penh, Cambodia</p>
 <div class="flex flex-col gap-1 mb-2">
 <span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Official Operating Hours</span>
-<p class="font-body-md text-body-md text-on-surface font-semibold">Daily: 08:30 AM — 06:30 PM</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Daily: 08:30 AM to 06:30 PM</p>
 </div>
 </div>
 </div>
@@ -325,15 +325,17 @@
 <p class="font-label-md text-label-md text-on-surface-variant text-center md:text-left"> Heritage &amp; Modern Craft Since 2016.</p>
 </div>
 <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./index.html">Home</a>
                 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./About Yeaksa Printing.html">About</a>
                 <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./Locations Yeaksa Printing.html">Locations</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="mailto:protocol@yeaksaprinting.com">Contact</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./Gallery Yeaksa Printing.html">Gallery</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-secondary transition-colors cursor-pointer" href="./Contact Us.html">Contact Us</a>
 </div>
 <div class="text-center md:text-right">
 <p class="font-label-md text-label-md text-on-surface-variant">© 2016 Yeaksa Printing. All rights reserved.</p>
 <div class="flex justify-center md:justify-end gap-4 mt-2">
 <span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">public</span>
-<span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">mail</span>
+<a href="mailto:protocol@yeaksaprinting.com" aria-label="Email Yeaksa Printing"><span class="material-symbols-outlined text-primary text-xl hover:text-secondary cursor-pointer transition-colors">mail</span></a>
 </div>
 </div>
 </div>
@@ -343,7 +345,7 @@
   // Set active nav link based on current page
   document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
-    const currentPage = window.location.pathname.split('/').pop() || 'Locations Yeaksa Printing.html';
+    const currentPage = decodeURIComponent(window.location.pathname.split('/').pop()) || 'Locations Yeaksa Printing.html';
     
     navLinks.forEach(link => {
       link.classList.remove('active');
@@ -357,7 +359,7 @@
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-    const currentPageFile = window.location.pathname.split('/').pop() || 'Locations Yeaksa Printing.html';
+    const currentPageFile = decodeURIComponent(window.location.pathname.split('/').pop()) || 'Locations Yeaksa Printing.html';
 
     // Toggle mobile menu
     hamburger.addEventListener('click', (e) => {
